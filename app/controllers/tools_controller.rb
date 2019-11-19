@@ -1,13 +1,13 @@
 class ToolsController < ApplicationController
-before_action :set_params, only: %i[create update]
-before_action :set_tool, only: %i[show edit destroy]
-
+  before_action :set_params, only: %i[create update]
+  before_action :set_tool, only: %i[show edit destroy]
 
   def index
     @tools = Tool.all
   end
 
-  def show; end
+  def show
+  end
 
   def new
     @tool = Tool.new

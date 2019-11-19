@@ -1,0 +1,10 @@
+<%=  simple_form_for(tool) do |f| %>
+  <%=  f.input :name %>
+  <%=  f.input :description %>
+  <%=  f.input :brand %>
+  <%=  f.input :image %>
+  <%=  f.input :price %>
+  <%=  f.input :parts_list %>
+  <%=  f.input :category, collection: ["Automotive", "Garden", "Home"] %>
+  <%= f.submit %>
+<% end %>
