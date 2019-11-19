@@ -1,0 +1,14 @@
+.footer {
+  background: $zdark-gray;
+  height: 100px;
+  width: 100%;
+  padding: 0px 50px;
+  color: $zlight-gray;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer .fa-hammer {
+  color: $zyellow;
+}
