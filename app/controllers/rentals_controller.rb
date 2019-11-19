@@ -16,7 +16,9 @@ class RentalsController < ApplicationController
   def create
     @rental = Rental.new(set_params)
     @rental.user_id = current_user.id
-    if @rental.save?
+    @rental.tool_id = params["tool_id"].to_i
+    raise
+    if @rental.save
       redirect_to rentals_show_path
     else
       render :new
@@ -27,7 +29,7 @@ class RentalsController < ApplicationController
 
   def update
     @rental.update(set_params)
-    if @rental.save?
+    if @rental.save
       redirect_to rentals_show_path
     else
       render :edit

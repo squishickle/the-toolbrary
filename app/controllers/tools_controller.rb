@@ -7,6 +7,7 @@ class ToolsController < ApplicationController
   end
 
   def show
+    @rental = Rental.new
   end
 
   def new
@@ -27,7 +28,7 @@ class ToolsController < ApplicationController
 
   def update
     @tool.update(set_params)
-    if @tool.save?
+    if @tool.save
       redirect_to tool_path(@tool)
     else
       render :edit
