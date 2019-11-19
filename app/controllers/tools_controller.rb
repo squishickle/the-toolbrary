@@ -27,7 +27,11 @@ before_action :set_tool, only: %i[show edit destroy]
 
   def update
     @tool.update(set_params)
-    redirect_to tool_path(@tool)
+    if @tool.save?
+      redirect_to tool_path(@tool)
+    else
+      render :edit
+    end
   end
 
   def destroy
