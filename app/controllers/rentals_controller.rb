@@ -1,6 +1,6 @@
 class RentalsController < ApplicationController
-before_action :set_params %i[create update]
-before_action :set_rental %i[show edit destroy]
+  before_action :set_params, only: %i[create update]
+  before_action :set_rental, only: %i[show edit destroy]
 
 
   def index
