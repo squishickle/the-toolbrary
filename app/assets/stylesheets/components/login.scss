@@ -1,13 +1,13 @@
 .login-wrap {
-    max-width: 800px;
-    margin: 0 auto;
-    width: 100%;
-    padding: 20px;
-    position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 20px;
+  position: relative;
 }
 
 .login-header {
-    margin: 50px 0 20px 0;
+  margin: 50px 0 20px 0;
 
 }
 
@@ -16,8 +16,8 @@
 }
 
 .flex-grid {
-    display: flex;
-    flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .login-half {
@@ -27,6 +27,11 @@
 .login-half.left {
     padding-right: 10%;
     width: 55%;
+}
+
+#sign-up-half{
+  width: 100%;
+  padding: 0;
 }
 
 .forms-input {
@@ -44,18 +49,15 @@ label{
   color: #D3D3D3;
 }
 
-.string.email.optional {
-  padding: 6%;
+.form-control{
+  padding: 20px 6%;
   width: 100%;
   border-radius: 4px;
   border: none;
 }
 
-.form-control.password.optional{
-  padding: 6%;
-  width: 100%;
-  border-radius: 4px;
-  border: none;
+.form-text{
+  color: #D3D3D3 !important;
 }
 
 .btn {
@@ -74,8 +76,8 @@ label{
 }
 
 .link-container a{
-    color: $blue;
-    font-weight: lighter;
+  color: $blue;
+  font-weight: lighter;
 }
 
 .login-divider {
@@ -88,40 +90,40 @@ label{
 }
 
 .login-divider .bar {
-    width: 2px;
-    height: 41%;
-    width: 2px;
-    position: absolute;
-    background: $zlight-gray;
-    left: -1px;
+  width: 2px;
+  height: 41%;
+  width: 2px;
+  position: absolute;
+  background: $zlight-gray;
+  left: -1px;
 }
 
 .login-or {
-    position: absolute;
-    width: 46px;
-    height: 18%;
-    left: -23px;
-    border: 2px solid $zlight-gray;
-    top: 41%;
-    text-align: center;
-    display: flex;
-    border-radius: 10px;
-    box-pack: center;
-    justify-content: center;
-    box-align: center;
-    align-items: center;
-    font-size: 1.2rem;
-    line-height: 30px;
-    color: $zlight-gray;
+  position: absolute;
+  width: 46px;
+  height: 18%;
+  left: -23px;
+  border: 2px solid $zlight-gray;
+  top: 41%;
+  text-align: center;
+  display: flex;
+  border-radius: 10px;
+  box-pack: center;
+  justify-content: center;
+  box-align: center;
+  align-items: center;
+  font-size: 1.2rem;
+  line-height: 30px;
+  color: $zlight-gray;
 }
 
 .login-divider .bar-bottom {
-    bottom: 0;
+  bottom: 0;
 }
 
 .login-half.right {
-    padding-left: 10%;
-    width: 45%;
+  padding-left: 10%;
+  width: 45%;
 }
 
 
