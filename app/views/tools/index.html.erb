@@ -1,2 +1,7 @@
-<h1>Tools#index</h1>
-<p>Find me in app/views/tools/index.html.erb</p>
+<h1>Here are all the tools</h1>
+
+<% @tools.each do |tool| %>
+  <ul>
+    <li><%= tool.name %></li>
+  </ul>
+<% end %>
