@@ -1,5 +1,3 @@
-require 'pry'
-
 class Rental < ApplicationRecord
   validate :no_overlaps
   validates :tool_id, presence: true
