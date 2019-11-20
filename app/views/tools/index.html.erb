@@ -1,7 +1,31 @@
-<h1>Here are all the tools</h1>
+<div class="container">
+  <h1>Tools available</h1>
 
-<% @tools.each do |tool| %>
-  <ul>
-    <li><%= tool.name %></li>
-  </ul>
-<% end %>
+<div class="tool-container">
+  <% @tools.each do |tool| %>
+    <div>
+      <div class="tool-card">
+        <div class="Text-box">
+          <h2><%= tool.name %></h2>
+        </div>
+        <div class="tool-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://source.unsplash.com/1600x900/?#{tool.name},#{tool.brand})">
+          <div class='tool-info'>
+            <p>
+              <% if tool.availability_status%>
+                <i class="far fa-check-circle"></i>available
+              <% else %>
+                <i class="far fa-times-circle">reserved</i>available
+              <% end %>
+            </p>
+          </div>
+          <div class='tool-info'>
+            <p>
+              $<%= tool.price %> per day
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+</div>
