@@ -30,8 +30,9 @@
       </header>
     </div>
     <div class="tool-half right">
-      <h2>$<%= @tool.price  %> per day</h2>
+      <h2 class="price-display">$<em><%= @tool.price  %></em> per day</h2>
       <hr class="line">
+      <div class="widget-content" data-unavailable="<%= @tool.unavailable_dates.to_json %>"></div>
       <%=  render 'rental_form', tool: @tool, rental: @rental %>
       <p>price</p>
       <hr class="line">
