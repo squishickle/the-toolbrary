@@ -1,6 +1,12 @@
-.tool-container {
-  height: 80vh;
+  h1 {
+    text-align: center;
+  }
 
+.tool-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+  height: 80vh;
 }
 
 .tool-card {
@@ -42,27 +48,9 @@
     p {
       color: white;
       text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-      font-size: 24px;
+      font-size: 18px;
       margin: 0;
     }
   }
 }
-
-.tool-card:hover .tool-image {
-  background-size: cover;
-  background-position: center;
-  background-image: none;
-  background: $zyellow;
-  transition-duration: 0.4s;
-  transition-timing-function: ease-in-out;
-}
-
-.tool-card:hover .tool-image a {
-  color: white;
-  transform: scale(1) translate(-50%,-50%);
-  transition: 300ms 100ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-
-
 
