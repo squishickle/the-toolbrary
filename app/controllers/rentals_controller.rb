@@ -17,11 +17,12 @@ class RentalsController < ApplicationController
     @rental = Rental.new(set_params)
     @rental.user_id = current_user.id
     @rental.tool_id = params["tool_id"].to_i
-    raise
+    @rental.total_price = (@rental.end_date - @rental.start_date) * @rental.tool.price
     if @rental.save
       redirect_to rentals_show_path
     else
-      render :new
+      @tool = @rental.tool
+      render "tools/show"
     end
   end
 

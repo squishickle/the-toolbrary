@@ -1,7 +1,10 @@
-<h1>Tools#show</h1>
-<p><%= @tool.name  %></p>
-
+<h1><%= @tool.name  %></h1>
+<br>
+<h1>Price:</h1>
+<h2 class="price-display"><em>$ <%= @tool.price  %></em> / day </h2>
+<br>
 <h3>Rent the tool</h3>
+<div class="widget-content" data-unavailable="<%= @tool.unavailable_dates.to_json %>"></div>
 <%=  render 'rental_form', tool: @tool, rental: @rental %>
 
 
