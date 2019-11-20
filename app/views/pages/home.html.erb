@@ -10,7 +10,9 @@
             id: "search-bar",
           placeholder: "Drill"
         %>
-        <%= submit_tag "Search", class: "btn" %>
+        <%= link_to tools_path do %>
+          <i class="fas fa-search"></i>
+        <% end %>
       <% end %>
 
 
