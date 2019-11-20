@@ -1,0 +1,131 @@
+.login-wrap {
+  max-width: 800px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 20px;
+  position: relative;
+}
+
+.login-header {
+  margin: 50px 0 20px 0;
+
+}
+
+.login-header h1 {
+  font-weight: bold;
+}
+
+.flex-grid {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.login-half {
+  width: 50%;
+}
+
+.login-half.left {
+    padding-right: 10%;
+    width: 55%;
+}
+
+#sign-up-half{
+  width: 100%;
+  padding: 0;
+}
+
+.forms-input {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+label{
+  margin: 0;
+  font-weight: normal;
+  display: block;
+  margin: 0 0 3px 0;
+  letter-spacing: 1.5px;
+  color: #D3D3D3;
+}
+
+.form-control{
+  padding: 20px 6%;
+  width: 100%;
+  border-radius: 4px;
+  border: none;
+}
+
+.form-text{
+  color: #D3D3D3 !important;
+}
+
+.btn {
+  display: block;
+  width: 100%;
+  background-color: $logo-color;
+  border: none;
+  color: white;
+}
+
+.link-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 8%;
+}
+
+.link-container a{
+  color: $blue;
+  font-weight: lighter;
+}
+
+.login-divider {
+  width: 0%;
+  position: relative;
+}
+
+.login-divider .bar-top {
+    top: 0;
+}
+
+.login-divider .bar {
+  width: 2px;
+  height: 41%;
+  width: 2px;
+  position: absolute;
+  background: $zlight-gray;
+  left: -1px;
+}
+
+.login-or {
+  position: absolute;
+  width: 46px;
+  height: 18%;
+  left: -23px;
+  border: 2px solid $zlight-gray;
+  top: 41%;
+  text-align: center;
+  display: flex;
+  border-radius: 10px;
+  box-pack: center;
+  justify-content: center;
+  box-align: center;
+  align-items: center;
+  font-size: 1.2rem;
+  line-height: 30px;
+  color: $zlight-gray;
+}
+
+.login-divider .bar-bottom {
+  bottom: 0;
+}
+
+.login-half.right {
+  padding-left: 10%;
+  width: 45%;
+}
+
+
+
+

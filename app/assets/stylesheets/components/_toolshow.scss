@@ -1,0 +1,70 @@
+.tool-banner {
+  background-size: cover;
+  background-position: center;
+  padding: 150px 0;
+}
+
+.tool-half.right {
+  width: 40%;
+  padding: 0;
+  border: solid 1px #D3D3D3;
+  padding: 2%;
+}
+
+.little-big-header{
+  font-weight: lighter;
+  font-size: 2.0rem;
+  margin-bottom: 5%;
+}
+.tool-header{
+  margin: 0px 0 20px 0;
+}
+.tool-header1{
+  display: flex;
+  justify-content: space-around;
+  p {
+    letter-spacing: 1.5px;
+    color: #D3D3D3;
+    margin: 0;
+  }
+}
+
+.tool-header2{
+  p {
+    margin: 5% 0%;
+    color: #5F5F5F;
+  }
+}
+
+.tool-header3{
+  ul {
+    margin: 5% 0%;
+    color: #5F5F5F;
+  }
+}
+
+.tool-half.left {
+  width: 55%;
+  padding: 0;
+  margin-right: 5%;
+}
+
+.tool-half {
+  width: 50%;
+}
+
+#new-rental input{
+  display: block;
+  width: 100%;
+  background-color: $logo-color;
+  border: none;
+  color: white;
+}
+
+.tool-wrap {
+  max-width: 900px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 20px;
+  position: relative;
+}

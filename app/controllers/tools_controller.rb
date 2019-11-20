@@ -1,13 +1,14 @@
 class ToolsController < ApplicationController
-before_action :set_params, only: %i[create update]
-before_action :set_tool, only: %i[show edit destroy]
-
+  before_action :set_params, only: %i[create update]
+  before_action :set_tool, only: %i[show edit destroy]
 
   def index
     @tools = Tool.all
   end
 
-  def show; end
+  def show
+    @rental = Rental.new
+  end
 
   def new
     @tool = Tool.new
@@ -27,7 +28,7 @@ before_action :set_tool, only: %i[show edit destroy]
 
   def update
     @tool.update(set_params)
-    if @tool.save?
+    if @tool.save
       redirect_to tool_path(@tool)
     else
       render :edit

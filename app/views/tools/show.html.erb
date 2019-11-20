@@ -1,2 +1,43 @@
-<h1>Tools#show</h1>
-<p>Find me in app/views/tools/show.html.erb</p>
+<div class="tool-banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://source.unsplash.com/1600x900/?drill);">
+</div>
+
+<div class="tool-wrap">
+  <div class="flex-grid">
+    <div class="tool-half left">
+      <header class="tool-header">
+        <h1 class="little-big-header"><%= @tool.name  %></h1>
+        <div class="tool-header1">
+        <% if @tool.availability_status == true%>
+          <p>currently available</p>
+        <% else %>
+          <p>not currently available</p>
+        <% end %>
+        <p><%= @tool.brand %></p>
+        <p><%= @tool.category %></p>
+        </div>
+        <hr class="line">
+        <div class="tool-header2">
+        <p><%= @tool.description %></p>
+        </div>
+        <hr class="line">
+        <div class="tool-header3">
+          <ul>
+            <li><%= @tool.tech_specs %></li>
+            <li><%= @tool.parts_list %></li>
+          </ul>
+        </div>
+        <hr class="line">
+      </header>
+    </div>
+    <div class="tool-half right">
+      <h2>$<%= @tool.price  %> per day</h2>
+      <hr class="line">
+      <%=  render 'rental_form', tool: @tool, rental: @rental %>
+      <p>price</p>
+      <hr class="line">
+      <p>price</p>
+      <hr class="line">
+      <p>total</p>
+    </div>
+  </div>
+</div>

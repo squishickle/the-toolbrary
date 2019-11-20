@@ -9,15 +9,32 @@
     </body>
   </div>
 </div>
-
-<div>
-  <div class="catergory-card">
-    <div class="Image-box">
-      <img src="https://images.unsplash.com/photo-1509440040931-1505a7cb590e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=564&q=80" >
-      <a class="View-btn">View</a>
+<% category = ["Automotive",
+"Bicycle",
+"Carpentry & Woodworking",
+"Cleaning",
+"Concrete & Masonry",
+"Electrical & Lighting",
+"Floor & Wall",
+"Garden & Outdoors",
+"Ladders",
+"Measuring",
+"Mechanical & Metalwork",
+"Painting & Caulking",
+"Plumbing",
+"Safety",
+"Household",
+"Miscellaneous"]%>
+<div class="card-container">
+  <% category.each do |c| %>
+    <div class="catergory-card">
+      <div class="Image-box">
+        <img src="https://source.unsplash.com/1600x900/?<%= c %>" >
+        <a class="View-btn">View</a>
+      </div>
+      <div class="Text-box">
+        <h2><%= c %></h2>
+      </div>
     </div>
-    <div class="Text-box">
-      <h2>Automotive</h2>
-    </div>
-  </div>
+  <% end %>
 </div>
