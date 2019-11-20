@@ -18,3 +18,25 @@
   }
 }
 
+.sign-up-btn a {
+  display: block;
+  width: 100%;
+  background-color: $logo-color;
+  border: none;
+  color: white !important;
+  transition-duration: 0.3s;
+  padding-right: 40px;
+  padding-left: 40px;
+  border-radius: 8px;
+   &:hover{
+    color: white !important;
+    transform: scale(1.1);
+
+  }
+}
+
+a .nav-link{
+  padding-right: 40px;
+  padding-left: 40px;
+}
+

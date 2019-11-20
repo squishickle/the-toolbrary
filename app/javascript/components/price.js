@@ -9,7 +9,7 @@ const changePrice = function() {
     const startDate = Date.parse(startDateInput.value);
     const days = (endDate - startDate) / (24 * 60 * 60 * 1000);
     const totalPrice = days * pricePerDay;
-    priceHTML.innerHTML = `$${totalPrice} for ${days} days`
+    priceHTML.innerHTML = `$${totalPrice}`
   });
 };
 
