@@ -1,0 +1,19 @@
+.cancel-account {
+  color: #4D5057;
+}
+
+.btn-cancel {
+  display: block;
+  width: 100%;
+  background-color: #F72C25;
+  border: none;
+  color: white;
+  transition-duration: 0.2s;
+  border-radius: 4px;
+  padding: 1% 0;
+   &:hover{
+    color: white !important;
+    transform: scale(1.02);
+
+  }
+}
