@@ -1,37 +1,52 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<div class="login-wrap">
+  <header class="login-header">
+    <h2 class="login-logo"></h2>
+    <h1 class="little-big-header">Edit <%= resource_name.to_s.humanize %></h1>
+    <div class="flex-grid">
+      <div class="login-half left" id="sign-up-half">
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= f.error_notification %>
+        <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+        <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.input :photo %>
-    <%= f.input :photo_cache, as: :hidden %>
-    <%= f.input :email, required: true, autofocus: true %>
+        <div class="form-inputs">
+          <%= f.input :photo %>
+          <%= f.input :photo_cache, as: :hidden %>
+          <%= f.input :email, required: true, autofocus: true %>
 
-    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-      <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
-    <% end %>
+          <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+          <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+          <% end %>
 
-    <%= f.input :password,
-                hint: "leave it blank if you don't want to change it",
-                required: false,
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :password_confirmation,
-                required: false,
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :current_password,
-                hint: "we need your current password to confirm your changes",
-                required: true,
-                input_html: { autocomplete: "current-password" } %>
-  </div>
+          <%= f.input :password,
+          hint: "leave it blank if you don't want to change it",
+          required: false,
+          input_html: { autocomplete: "new-password" } %>
+          <%= f.input :password_confirmation,
+          required: false,
+          input_html: { autocomplete: "new-password" } %>
+          <%= f.input :current_password,
+          hint: "we need your current password to confirm your changes",
+          required: true,
+          input_html: { autocomplete: "current-password" } %>
+        </div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Update" %>
-  </div>
-<% end %>
+        <div class="form-actions">
+          <%= f.button :submit, "Update", class: "yellow-btn" %>
+        </div>
+        <% end %>
+        <br>
+        <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: 'btn btn-cancel' %></p>
+        <p class='cancel-account'>
+          By canceling your account, you agree that you understand the following:
+          <br>
+          Canceling your account will not your current outstanding fees to The Toolbrary. If you have any active rentals that need to be returned, you might want to return those items on Toolbrary before you cancel your Toolbrary account. After you cancel your account, Toolbrary is no longer responsible for or involved with your active tools for rent. Canceling your Toolbrary account is permanent.
+        </p>
 
-<h3>Cancel my account</h3>
-
-<p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-<%= link_to "Back", :back %>
+        <%= link_to :back do %>
+          Back <i class="fas fa-undo"></i>
+        <% end %>
+        </div>
+      </div>
+    </div>
+  </header>
+</div>
