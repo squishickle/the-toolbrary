@@ -1,5 +1,21 @@
-<h1>Rentals#index</h1>
-<p>Find me in app/views/rentals/index.html.erb</p>
+
+<div class="rental-card-container">
+  <% @rentals.each do |r| %>
+    <div class="card-rental">
+
+      <%= cl_image_tag r.tool.image %>
+      <div class="card-rental-infos">
+        <h2><%= r.tool.name %></h2>
+        <small><%= r.start_date %>   -   <%= r.end_date %></small>
+        <p>Total price $<%= r.total_price %></p>
+      </div>
+    </div>
+  <% end %>
+
+</div>
+
+
+
 
 
 
