@@ -19,9 +19,9 @@ const changePrice = function() {
       if (totalPrice) {
         priceTable.style.display = "table";
         priceHTML.innerHTML = `Total: $${totalPrice}`;
-        priceCalc.innerHTML = `$${pricePerDay * 0.97} x ${days} days`;
-        priceCalcValue.innerHTML = `$${pricePerDay * 0.97 * days}`;
-        serviceFee.innerHTML = `$${pricePerDay * 0.03 * days}`;
+        priceCalc.innerHTML = `$${(pricePerDay * 0.97)} x ${days} days`;
+        priceCalcValue.innerHTML = `$${(pricePerDay * 0.97 * days).toFixed(2)}`;
+        serviceFee.innerHTML = `$${(pricePerDay * 0.03 * days).toFixed(2)}`;
         finalTotalPrice.innerHTML = `$${totalPrice}`;
       }
     };
