@@ -4,7 +4,11 @@ class ToolsController < ApplicationController
 
   def index
     if params[:query].present?
-      @tools = Tool.where("name ILIKE ?", "%#{params[:query]}%")
+      sql_query = " \
+        tools.name ILIKE :query \
+        OR tools.category ILIKE :query \
+      "
+      @tools = Tool.where(sql_query, query: "%#{params[:query]}%")
     else
       @tools = Tool.all
     end

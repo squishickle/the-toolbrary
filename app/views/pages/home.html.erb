@@ -55,7 +55,7 @@
     <div class="catergory-card">
       <div class="Image-box">
         <img src="https://source.unsplash.com/1600x900/?<%= c %>" >
-        <a class="View-btn">View</a>
+        <%= link_to "View", tools_path(:query => c) %>
       </div>
       <div class="Text-box">
         <h2><%= c %></h2>
