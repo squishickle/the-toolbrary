@@ -8,11 +8,11 @@
       <div class="Text-box">
         <h2><%= link_to tool.name, tool_path(tool), :target => "_blank" %></h2>
       </div>
-      <% if tool.image.url %>
-      <% path = cl_image_path tool.image, height: 300, width: 400, crop: :fill  %>
-      <% else %>
-      <% path = 'https://images.unsplash.com/photo-1572981779307-38b8cabb2407?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60' %>
-      <% end %>
+        <% if tool.image.url %>
+          <% path = cl_image_path tool.image, height: 300, width: 400, crop: :fill  %>
+        <% else %>
+          <% path = 'https://images.unsplash.com/photo-1572981779307-38b8cabb2407?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60' %>
+        <% end %>
       <div class="tool-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= path %>')">
         <div class='tool-info'>
           <p>

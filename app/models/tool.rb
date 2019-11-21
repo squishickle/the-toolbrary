@@ -12,7 +12,7 @@ class Tool < ApplicationRecord
   validates :tech_specs, presence: true
   validates :parts_list, presence: true
   validates :category, presence: true
-  mount_uploader :image, PhotoUploader
+  mount_uploader :image, ImageUploader
 
   def unavailable_dates
     rentals.pluck(:start_date, :end_date).map do |range|
