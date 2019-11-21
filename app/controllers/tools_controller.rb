@@ -9,9 +9,9 @@ class ToolsController < ApplicationController
         tools.name ILIKE :query \
         OR tools.category ILIKE :query \
       "
-      @tools = Tool.where(sql_query, query: "%#{params[:query]}%")
+      @tools = Tool.where(sql_query, query: "%#{params[:query]}%").reject { |tool| tool.user == current_user }
     else
-      @tools = Tool.all
+      @tools = Tool.all.reject { |tool| tool.user == current_user }
     end
   end
 
