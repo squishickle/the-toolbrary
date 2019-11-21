@@ -1,6 +1,6 @@
 class ToolsController < ApplicationController
   before_action :set_params, only: %i[create update]
-  before_action :set_tool, only: %i[show edit destroy]
+  before_action :set_tool, only: %i[show edit update destroy]
   skip_before_action :authenticate_user!, only: %i[index show]
 
   def index
