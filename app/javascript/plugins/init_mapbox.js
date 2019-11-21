@@ -2,8 +2,8 @@ import mapboxgl from 'mapbox-gl';
 
 const initMapbox = () => {
   const mapElement = document.getElementById('map');
-  const markers = JSON.parse(mapElement.dataset.markers);
   if (mapElement) { // only build a map if there's a div#map to inject into
+    const markers = JSON.parse(mapElement.dataset.markers);
     mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
     const map = new mapboxgl.Map({
       container: 'map',
@@ -17,7 +17,7 @@ const initMapbox = () => {
       .setLngLat([ markers.lng, markers.lat ])
       .addTo(map);
 
-  fitMapToMarkers(map, markers);
+    fitMapToMarkers(map, markers);
   }
 };
 
