@@ -3,9 +3,12 @@ class ToolsController < ApplicationController
   before_action :set_tool, only: %i[show edit destroy]
 
   def index
-    raise
     if params[:query].present?
-      @tools = Tool.where("name ILIKE ?", "%#{params[:query]}%")
+      sql_query = " \
+        tools.name ILIKE :query \
+        OR tools.category ILIKE :query \
+      "
+      @tools = Tool.where(sql_query, query: "%#{params[:query]}%")
     else
       @tools = Tool.all
     end
