@@ -17,6 +17,10 @@ class ToolsController < ApplicationController
 
   def show
     @rental = Rental.new
+    @markers = {
+      lat: @tool.user.latitude,
+      lng: @tool.user.longitude
+    }
   end
 
   def new

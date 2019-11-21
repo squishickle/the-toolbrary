@@ -54,8 +54,10 @@
   <% category.each do |c| %>
     <div class="catergory-card">
       <div class="Image-box">
+        <%= link_to tools_path(:query => c) do %>
         <img src="https://source.unsplash.com/1600x900/?<%= c %>" >
-        <%= link_to "View", tools_path(:query => c, class: "View-btn") %>
+        <a href="<%= tools_path(:query => c) %>" class="View-btn">View</a>
+        <% end %>
       </div>
       <div class="Text-box">
         <h2><%= c %></h2>
