@@ -1,2 +1,13 @@
-<h1>Tools#edit</h1>
-<p>Find me in app/views/tools/edit.html.erb</p>
+<div class="login-wrap">
+  <header class="login-header">
+    <h2 class="login-logo"></h2>
+    <h1 class="little-big-header">Edit Tool</h1>
+    <div class="flex-grid">
+      <div class="login-half left" id="sign-up-half">
+        <div class="form-inputs">
+          <%=  render 'form', tool: @tool %>
+        </div>
+      </div>
+    </div>
+  </header>
+</div>
