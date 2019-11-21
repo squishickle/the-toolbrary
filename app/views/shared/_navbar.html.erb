@@ -7,7 +7,6 @@
     <span class="navbar-toggler-icon"></span>
   </button>
 
-
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
@@ -16,7 +15,7 @@
         </li>
         <li class="nav-item dropdown">
           <% if current_user.photo.url %>
-            <%= cl_image_tag current_user.photo.url(:bright_face), class: "avatar" %>
+            <%= cl_image_tag current_user.photo.url(:bright_face), class: "avatar", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <% else %>
             <%= image_tag "https://iupac.org/wp-content/uploads/2018/05/default-avatar-768x768.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <% end %>
