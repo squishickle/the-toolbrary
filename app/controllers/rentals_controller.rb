@@ -2,9 +2,8 @@ class RentalsController < ApplicationController
   before_action :set_params, only: %i[create update]
   before_action :set_rental, only: %i[show edit destroy]
 
-
   def index
-    @rentals = Rental.all
+    @rentals = Rental.all.select { |rental| rental.user == current_user }
   end
 
   def show; end
@@ -19,7 +18,7 @@ class RentalsController < ApplicationController
     @rental.tool_id = params["tool_id"].to_i
     @rental.total_price = (@rental.end_date - @rental.start_date) * @rental.tool.price
     if @rental.save
-      redirect_to rentals_show_path
+      redirect_to rentals_path
     else
       @tool = @rental.tool
       render "tools/show"
@@ -31,7 +30,7 @@ class RentalsController < ApplicationController
   def update
     @rental.update(set_params)
     if @rental.save
-      redirect_to rentals_show_path
+      redirect_to rentals_path
     else
       render :edit
     end
@@ -39,7 +38,7 @@ class RentalsController < ApplicationController
 
   def destroy
     @rental.delete
-    redirect_to rentals_show_path
+    redirect_to rentals_path
   end
 
   private
