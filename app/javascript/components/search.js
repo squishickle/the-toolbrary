@@ -3,9 +3,11 @@ const hideTypedText = function() {
   const typedText = document.querySelector('.typer-text');
   const searchBar = document.querySelector('.form-control');
   // apply above function to event listeners endDateInput and startDateInput
-  searchBar.addEventListener('focus', (event) => {
-    typedText.style.display = "none";
-  });
+  if(searchBar && typedText){
+    searchBar.addEventListener('focus', (event) => {
+      typedText.style.display = "none";
+    });
+  }
 };
 
 export { hideTypedText }
