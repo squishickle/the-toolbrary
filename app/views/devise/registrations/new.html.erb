@@ -7,6 +7,8 @@
         <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
         <%= f.error_notification %>
         <div class="form-inputs">
+          <%= f.input :photo %>
+          <%= f.input :photo_cache, as: :hidden %>
           <%= f.input :email, label: "EMAIL",
                       required: true,
                       autofocus: true,
@@ -26,7 +28,7 @@
                       input_html: { autocomplete: "new-password" } %>
         </div>
         <div class="form-actions">
-          <%= f.button :submit, "Sign up", class: "btn"%>
+          <%= f.submit "Sign up", class: "yellow-btn"%>
         </div>
         <% end %>
       </div>

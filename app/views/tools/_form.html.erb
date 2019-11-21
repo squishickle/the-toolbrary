@@ -1,11 +1,29 @@
 <%=  simple_form_for(tool) do |f| %>
-  <%=  f.input :name %>
-  <%=  f.input :description %>
-  <%=  f.input :brand %>
   <%=  f.input :image %>
-  <%=  f.input :price %>
+  <div class="d-flex">
+    <%=  f.input :name, wrapper_html: {class: "margin-r"}%>
+    <%=  f.input :brand, wrapper_html: {class: "margin-l"}%>
+  </div>
+  <%=  f.input :image_cache, as: :hidden %>
+  <%=  f.input :description %>
   <%=  f.input :parts_list %>
   <%=  f.input :tech_specs %>
-  <%=  f.input :category, collection: ["Automotive", "Garden", "Home"] %>
-  <%= f.submit %>
+  <%=  f.input :category, collection: ["Automotive",
+"Bicycle",
+"Carpentry & Woodworking",
+"Cleaning",
+"Concrete & Masonry",
+"Electrical & Lighting",
+"Floor & Wall",
+"Garden & Outdoors",
+"Ladders",
+"Measuring",
+"Mechanical & Metalwork",
+"Painting & Caulking",
+"Plumbing",
+"Safety",
+"Household",
+"Miscellaneous"] %>
+  <%=  f.input :price %>
+  <%= f.submit class: "rent yellow-btn" %>
 <% end %>

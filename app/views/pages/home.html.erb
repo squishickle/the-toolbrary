@@ -4,15 +4,26 @@
     <body>
 
       <%= form_tag tools_path, method: :get do %>
-        <%= text_field_tag :query,
-          params[:query],
-          class: "form-control",
-            id: "search-bar",
-          placeholder: "Drill"
-        %>
-        <%= link_to tools_path do %>
-          <i class="fas fa-search"></i>
-        <% end %>
+        <div class="search-typer-bar" style="position: relative">
+          <div class="search-box">
+            <%= text_field_tag :query,
+              params[:query],
+              class: "form-control",
+              id: "search-bar"
+            %>
+          </div>
+          <div class="search-box" id="typed-text" style="width: 15%">
+            <p class="typer-text">
+              <span class="typer" id="first-typer" data-delay="250" data-words="mallet,saw,drill,chisel,hammer,screwdriver,wrench"></span>
+              <span class="cursor" data-owner="first-typer" style="color: black"></span>
+            </p>
+          </div>
+          <div class="search-box">
+            <%= link_to tools_path do %>
+              <i class="fas fa-search"></i>
+            <% end %>
+          </div>
+        </div>
       <% end %>
 
 
@@ -43,8 +54,10 @@
   <% category.each do |c| %>
     <div class="catergory-card">
       <div class="Image-box">
+        <%= link_to tools_path(:query => c) do %>
         <img src="https://source.unsplash.com/1600x900/?<%= c %>" >
-        <a class="View-btn">View</a>
+        <a href="<%= tools_path(:query => c) %>" class="View-btn">View</a>
+        <% end %>
       </div>
       <div class="Text-box">
         <h2><%= c %></h2>

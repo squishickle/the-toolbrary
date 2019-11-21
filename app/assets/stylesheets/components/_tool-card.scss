@@ -20,13 +20,14 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
-.Text-box a {
+a {
   margin: 0;
   font-size: 24px;
   text-decoration: none;
   color: black;
   &:hover {
     color: $zyellow;
+    text-decoration: none;
   }
 }
 

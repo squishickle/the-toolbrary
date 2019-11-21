@@ -43,3 +43,17 @@ input#search-bar{
  top: -37%;
  right: 0.1%;
 }
+.search-box{
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+#typed-text{
+  user-select: none;
+  top: 11px;
+  left: 21px;
+  p {
+    font-size: 12pt;
+  }
+}

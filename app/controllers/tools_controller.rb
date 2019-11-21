@@ -1,12 +1,17 @@
 class ToolsController < ApplicationController
   before_action :set_params, only: %i[create update]
-  before_action :set_tool, only: %i[show edit destroy]
+  before_action :set_tool, only: %i[show edit update destroy]
+  skip_before_action :authenticate_user!, only: %i[index show]
 
   def index
     if params[:query].present?
-      @tools = Tool.where("name ILIKE ?", "%#{params[:query]}%")
+      sql_query = " \
+        tools.name ILIKE :query \
+        OR tools.category ILIKE :query \
+      "
+      @tools = Tool.where(sql_query, query: "%#{params[:query]}%").reject { |tool| tool.user == current_user }
     else
-      @tools = Tool.all
+      @tools = Tool.all.reject { |tool| tool.user == current_user }
     end
   end
 

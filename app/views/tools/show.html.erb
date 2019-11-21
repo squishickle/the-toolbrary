@@ -1,40 +1,55 @@
-<div class="tool-banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://source.unsplash.com/1600x900/?drill);">
-</div>
+<div class="show-tool">
+  <div class="tool-banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://source.unsplash.com/1600x900/?drill);">
+  </div>
 
-<div class="tool-wrap">
-  <div class="flex-grid">
-    <div class="tool-half left">
-      <header class="tool-header">
-        <h1 class="little-big-header"><%= @tool.name  %></h1>
-        <div class="tool-header1">
-        <% if @tool.availability_status == true%>
-          <p>currently available</p>
+  <div class="tool-wrap">
+    <div class="flex-grid">
+      <div class="tool-half left">
+        <header class="tool-header">
+          <h1 class="little-big-header"><%= @tool.name  %></h1>
+          <div class="tool-header1">
+          <% if @tool.availability_status == true%>
+            <p>currently available</p>
+          <% else %>
+            <p>not currently available</p>
+          <% end %>
+          <p><%= @tool.brand %></p>
+          <p><%= @tool.category %></p>
+          </div>
+          <hr class="line">
+          <div class="tool-header2">
+          <p><%= @tool.description %></p>
+          </div>
+          <hr class="line">
+          <div class="tool-header3">
+            <ul>
+              <li><%= @tool.tech_specs %></li>
+              <li><%= @tool.parts_list %></li>
+            </ul>
+          </div>
+          <hr class="line">
+          <% if @tool.image.url %>
+            <%= cl_image_tag @tool.image, height: 300, width: 450, crop: :fill %>
+          <% else %>
+            <% path = 'https://images.unsplash.com/photo-1572981779307-38b8cabb2407?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60' %>
+          <% end %>
+        </header>
+      </div>
+        <% unless @tool.user == current_user %>
+          <div class="tool-half right">
+            <h2 class="price-display">  $<em><%= @tool.price  %></em> / day</h2>
+            <hr class="line">
+            <div class="widget-content" data-unavailable="<%= @tool.unavailable_dates.to_json %>"></div>
+            <%=  render 'rental_form', tool: @tool, rental: @rental %>
+          </div>
         <% else %>
-          <p>not currently available</p>
+          <div class="tool-half right">
+            <h2 class="price-display">  $<em><%= @tool.price  %></em> / day</h2>
+            <hr class="line">
+            <%= link_to 'edit', edit_tool_path, class: "yellow-btn", style:"text-align: center" %>
+          </div>
         <% end %>
-        <p><%= @tool.brand %></p>
-        <p><%= @tool.category %></p>
-        </div>
-        <hr class="line">
-        <div class="tool-header2">
-        <p><%= @tool.description %></p>
-        </div>
-        <hr class="line">
-        <div class="tool-header3">
-          <ul>
-            <li><%= @tool.tech_specs %></li>
-            <li><%= @tool.parts_list %></li>
-          </ul>
-        </div>
-        <hr class="line">
       </header>
-    </div>
-    <div class="tool-half right">
-      <h2 class="price-display">  $<em><%= @tool.price  %></em> / day</h2>
-      <hr class="line">
-      <div class="widget-content" data-unavailable="<%= @tool.unavailable_dates.to_json %>"></div>
-      <%=  render 'rental_form', tool: @tool, rental: @rental %>
-    </div>
   </div>
 </div>
 <div id="map" style="width: 100%; height: 400px" data-markers="<%= @markers.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">

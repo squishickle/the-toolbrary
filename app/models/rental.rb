@@ -1,5 +1,3 @@
-require_relative '../validators/availability_validator'
-
 class Rental < ApplicationRecord
   validates :tool_id, presence: true
   validates :user_id, presence: true

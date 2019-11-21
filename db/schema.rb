@@ -54,6 +54,7 @@ ActiveRecord::Schema.define(version: 2019_11_21_015401) do
     t.string "name"
     t.float "latitude"
     t.float "longitude"
+    t.string "photo"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
