@@ -12,6 +12,7 @@ const changePrice = function() {
 
     // function that listens if date form input changes and edit's price
     const editPriceOnFormChange = (event) => {
+      console.log("hello");
       const endDate = Date.parse(endDateInput.value);
       const startDate = Date.parse(startDateInput.value);
       const days = (endDate - startDate) / (24 * 60 * 60 * 1000);
@@ -19,7 +20,7 @@ const changePrice = function() {
       if (totalPrice) {
         priceTable.style.display = "table";
         priceHTML.innerHTML = `Total: $${totalPrice}`;
-        priceCalc.innerHTML = `$${(pricePerDay * 0.97)} x ${days} days`;
+        priceCalc.innerHTML = `$${(pricePerDay * 0.97).toFixed(2)} x ${days} days`;
         priceCalcValue.innerHTML = `$${(pricePerDay * 0.97 * days).toFixed(2)}`;
         serviceFee.innerHTML = `$${(pricePerDay * 0.03 * days).toFixed(2)}`;
         finalTotalPrice.innerHTML = `$${totalPrice}`;
