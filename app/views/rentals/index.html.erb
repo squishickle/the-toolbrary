@@ -1,5 +1,6 @@
 
-<% if @rentals.count == 0 %>
+<% if @borrowing.count == 0 && @lending.count == 0 %>
+<% raise %>
   <div class="container empty-state-msg">
     <h2>You have no rentals at the moment.</h2>
   </div>
@@ -31,7 +32,8 @@
         <%= cl_image_tag r.tool.image %>
       </div>
     <% end %>
-  <% end %>
+<% end %>
+<% end %>
 </div>
 
 
