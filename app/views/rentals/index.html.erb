@@ -3,7 +3,7 @@
   <% @rentals.each do |r| %>
     <div class="card-rental">
 
-      <%= cl_image_tag r.tool.image %>
+      <%= cl_image_tag r.tool.image, height: 300, width: 400, crop: :thumb %>
       <div class="card-rental-infos">
         <h2><%= r.tool.name %></h2>
         <small><%= r.start_date %>   -   <%= r.end_date %></small>
@@ -13,12 +13,3 @@
   <% end %>
 
 </div>
-
-
-
-
-
-
-
-
-
