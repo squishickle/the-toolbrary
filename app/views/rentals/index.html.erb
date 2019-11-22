@@ -1,26 +1,41 @@
-<% if @rentals.count == 0 %>
+
+<% if @borrowing.count == 0 && @lending.count == 0 %>
+<% raise %>
   <div class="container empty-state-msg">
     <h2>You have no rentals at the moment.</h2>
   </div>
 <% else %>
-  <div class="rental-card-container">
-    <% @rentals.each do |r| %>
-      <div class="card-rental">
-          <%= cl_image_tag r.tool.image %>
-          <div class="card-rental-infos">
-            <h2><%= r.tool.name %></h2>
-            <small><%= r.start_date %>   -   <%= r.end_date %></small>
-            <p>Total price $<%= r.total_price %></p>
-          </div>
-        </div>
+ <h2 class="rent-title">Borrowing</h2>
+<div class="rental-card-container">
+  <% @borrowing.each do |r| %>
+    <div class="card-rental">
+      <% if r.tool.image.url %>
+        <%= cl_image_tag r.tool.image, height: 300, width: 400, crop: :thumb %>
+      <% else %>
+         <img src="https://images.unsplash.com/photo-1572981779307-38b8cabb2407?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" alt="">
       <% end %>
+      <div class="card-rental-infos">
+        <h2><%= r.tool.name %></h2>
+        <small><%= r.start_date %>   -   <%= r.end_date %></small>
+        <p>Total price $<%= r.total_price %></p>
+      </div>
     </div>
+  <% end %>
+
+<h2 class="rent-title">Lending</h2>
+<% if @lending == [] %>
+  <p class="non-message">You are curently not lending out any tools</p>
+  <% else %>
+    <% @lending.each do |r| %>
+      <div class="card-rental">
+        <div class="card-rental-infos">
+          <h2><%= r.tool.name %></h2>
+          <small><%= r.start_date %>   -   <%= r.end_date %></small>
+          <p>Total price $<%= r.total_price %></p>
+        </div>
+        <%= cl_image_tag r.tool.image %>
+      </div>
+    <% end %>
 <% end %>
-
-
-
-
-
-
-
-
+<% end %>
+</div>
