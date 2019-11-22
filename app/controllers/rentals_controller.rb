@@ -3,7 +3,8 @@ class RentalsController < ApplicationController
   before_action :set_rental, only: %i[show edit destroy]
 
   def index
-    @rentals = Rental.all.select { |rental| rental.user == current_user }
+    @borrowing_rentals = Rental.all.select { |rental| rental.user == current_user }
+    @lending_rentals = Rental.all.select { |rental| rental.tool.user == current_user }
   end
 
   def show; end
