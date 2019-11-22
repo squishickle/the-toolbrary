@@ -50,7 +50,7 @@ class ToolsController < ApplicationController
 
   def destroy
     @tool.destroy
-    redirect_to tools_path
+    redirect_to my_tools_path
   end
 
   private

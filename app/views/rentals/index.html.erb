@@ -1,5 +1,10 @@
 
-<h2 class="rent-title">Borrowing</h2>
+<% if @rentals.count == 0 %>
+  <div class="container empty-state-msg">
+    <h2>You have no rentals at the moment.</h2>
+  </div>
+<% else %>
+ <h2 class="rent-title">Borrowing</h2>
 <div class="rental-card-container">
   <% @borrowing.each do |r| %>
     <div class="card-rental">
@@ -27,9 +32,7 @@
       </div>
     <% end %>
   <% end %>
-
 </div>
-
 
 
 
