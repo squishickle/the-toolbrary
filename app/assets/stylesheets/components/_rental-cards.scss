@@ -11,6 +11,7 @@
   display: flex;
   align-items: center;
   margin: 2% 8%;
+  position: relative;
 }
 
 .card-rental img {
@@ -41,4 +42,18 @@
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+}
+
+.rental-card-image {
+  position: absolute;
+  right: 0;
+}
+
+.rent-title{
+  margin: 2% 4%;
+}
+
+.non-message{
+  display: inline-block;
+  margin: 0% 8%;
 }
