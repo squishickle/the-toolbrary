@@ -3,6 +3,11 @@
     margin: 5% 0 ;
   }
 
+  p{
+  color: $zdark-gray;
+  margin-top: 1%;
+  }
+
 .tool-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
