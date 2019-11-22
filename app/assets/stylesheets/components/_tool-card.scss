@@ -58,6 +58,10 @@ a {
   flex-wrap: wrap;
   align-content: center;
   justify-content: center;
+  h2 {
+    text-transform: uppercase;
+        text-align: center;
+  }
 }
 
 .tool-image {
