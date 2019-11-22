@@ -1,5 +1,5 @@
 .tool-banner {
-  background-size: auto;
+  background-size: contain;
   background-position: center;
   padding: 150px 0;
 }
@@ -15,6 +15,7 @@
   font-weight: lighter;
   font-size: 2.0rem;
   margin-bottom: 5%;
+  text-transform: uppercase;
 }
 .tool-header{
   margin: 0px 0 20px 0;
@@ -22,24 +23,30 @@
 .tool-header1{
   display: flex;
   justify-content: space-around;
+text-transform: lowercase;
   p {
     letter-spacing: 1.5px;
     color: #D3D3D3;
     margin: 0;
+    text-transform: lowercase;
   }
 }
 
 .tool-header2{
+text-transform: lowercase;
   p {
     margin: 5% 0%;
     color: #5F5F5F;
+    text-transform: lowercase;
   }
 }
 
 .tool-header3{
+text-transform: lowercase;
   ul {
     margin: 5% 0%;
     color: #5F5F5F;
+    text-transform: lowercase;
   }
 }
 
