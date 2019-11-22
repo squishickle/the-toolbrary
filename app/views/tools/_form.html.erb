@@ -1,4 +1,7 @@
-<%=  simple_form_for(tool) do |f| %>
+<!-- <div for="input" class= "upload-image-btn">
+  <p>Upload image</p>
+</div> -->
+  <%=  simple_form_for(tool) do |f| %>
   <%=  f.input :image %>
   <div class="d-flex">
     <%=  f.input :name, wrapper_html: {class: "margin-r"}%>
@@ -25,5 +28,5 @@
 "Household",
 "Miscellaneous"] %>
   <%=  f.input :price %>
-  <%= f.submit class: "rent yellow-btn" %>
+  <%= f.submit "update tool",  class: "rent yellow-btn" %>
 <% end %>
