@@ -20,6 +20,15 @@
           <% end %>
           <div class="tool-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= path %>')">
             <div class='tool-info'>
+              <% if tool.user == current_user %>
+                <object type="nested-link">
+                  <%= link_to tool_path(tool), class: "delete-item", method: :delete do %>
+                    <i class="delete fas fa-window-close"></i>
+                  <% end %>
+                </object>
+              <% end %>
+            </div>
+            <div class='tool-info'>
               <p>
                 $<%= tool.price %> per day
               </p>
