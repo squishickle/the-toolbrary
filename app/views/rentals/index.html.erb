@@ -32,7 +32,11 @@
           <small><%= r.start_date %>   -   <%= r.end_date %></small>
           <p>Total price $<%= r.total_price %></p>
         </div>
-        <%= cl_image_tag r.tool.image %>
+        <% if r.tool.image.url %>
+          <%= cl_image_tag r.tool.image, height: 300, width: 400, crop: :thumb %>
+        <% else %>
+           <img src="https://images.unsplash.com/photo-1572981779307-38b8cabb2407?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" alt="">
+        <% end %>
       </div>
     <% end %>
 <% end %>
