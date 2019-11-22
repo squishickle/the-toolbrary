@@ -1,5 +1,11 @@
+<% if @tool.image.url %>
+  <% pic = cl_image_path @tool.image %>
+<% else %>
+  <% pic = 'https://images.unsplash.com/photo-1572981779307-38b8cabb2407?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60' %>
+<% end %>
+
 <div class="show-tool">
-  <div class="tool-banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://source.unsplash.com/1600x900/?drill);">
+  <div class="tool-banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%=pic%>');">
   </div>
 
   <div class="tool-wrap">
@@ -28,11 +34,7 @@
             </ul>
           </div>
           <hr class="line">
-          <% if @tool.image.url %>
-            <%= cl_image_tag @tool.image, height: 300, width: 450, crop: :fill %>
-          <% else %>
-            <% path = 'https://images.unsplash.com/photo-1572981779307-38b8cabb2407?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60' %>
-          <% end %>
+
         </header>
       </div>
         <% unless @tool.user == current_user %>
