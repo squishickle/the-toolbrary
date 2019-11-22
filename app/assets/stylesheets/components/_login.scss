@@ -75,6 +75,21 @@ label{
   }
 }
 
+.red-btn {
+  display: block;
+  width: 100%;
+  background-color: red;
+  border: none;
+  color: white;
+  transition-duration: 0.2s;
+  border-radius: 4px;
+  padding: 1% 0;
+   &:hover{
+    color: white !important;
+    transform: scale(1.05);
+  }
+}
+
 .link-container{
   display: flex;
   flex-direction: column;
