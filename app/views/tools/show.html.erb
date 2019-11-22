@@ -47,6 +47,8 @@
             <h2 class="price-display">  $<em><%= @tool.price %></em> / day</h2>
             <hr class="line">
             <%= link_to 'edit', edit_tool_path, class: "yellow-btn", style:"text-align: center" %>
+            <br>
+            <%= link_to 'delete', tool_path, class: "red-btn", style:"text-align: center", method: :delete %>
           </div>
         <% end %>
       </header>

@@ -10,12 +10,14 @@
     <%= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
   <body>
-   <%= render 'shared/navbar' %>
-   <%= render 'shared/flashes' %>
-    <%= yield %>
-    <%= javascript_include_tag 'application' %>
-    <%= javascript_pack_tag 'application' %>
-    <script async src="https://unpkg.com/typer-dot-js@0.1.0/typer.js"></script>
+    <div class="main-container">
+       <%= render 'shared/navbar' %>
+       <%= render 'shared/flashes' %>
+      <%= yield %>
+      <%= javascript_include_tag 'application' %>
+      <%= javascript_pack_tag 'application' %>
+      <script async src="https://unpkg.com/typer-dot-js@0.1.0/typer.js"></script>
+    </div>
     <%= render 'shared/footer' %>
   </body>
 </html>
